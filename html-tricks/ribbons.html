@@ -1,0 +1,83 @@
+<html>
+    <head>
+    </head>
+    <style>
+        body,html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background: darkgrey;
+            font: bold 14px/21px Arial;
+        }
+        #container {
+            position: relative;
+            top: 0;
+            left: 200px;
+            width: 800px;
+            height: 100%;
+        }
+        .ribbon {
+            margin-top: 50px;
+            z-index: 2;
+            position: relative;
+            width: 560px;
+            height: 60px;
+            background: green;
+            margin-left: -30px;
+            padding: 20px;
+            color: white;
+        }
+        .ribbon:before {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-right: 15px solid darkgrey;
+            border-top: 15px solid black;
+            border-bottom: 0;
+        }
+        .ribbon:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 15px solid darkgrey;
+            border-top: 15px solid black;
+            border-bottom: 0;
+        }
+        #c {
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            width: 540px;
+            padding: 0 15px;
+            background: #eeeeee;
+            height: 100%;
+            left: 15px;
+        }
+        #r1 { background-color: #996600; }
+        #r2 { background-color: #669900; }
+        #r3 { background-color: #660066; border-radius: 3px 3px 0 0; }
+        #r4 { background-color: #009966; }
+
+    </style>
+    <body>
+        <div id="container">
+
+            <div id="c">
+
+                <h1>Ribbon show case</h1>
+                <div id="r1" class="ribbon"></div>
+                <div id="r2" class="ribbon"></div>
+                <div id="r3" class="ribbon">THis ribbon has soft upper borders</div>
+                <div id="r4" class="ribbon"></div>
+
+            </div>
+
+        </div>
+    </body>
+</html>

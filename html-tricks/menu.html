@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script>
+        $('document').ready(function() {
+
+            // Close all sub-menus
+            $("ul.menu").find("ul").hide();
+
+            $("ul.menu").on("click", "label", function(e) {
+                // Close all
+                $("ul.menu").find("ul").slideUp(1000, "easeOutBounce");
+                $(this).toggleClass("active");
+
+                // Open this one if it is not active
+                if ($(this).hasClass("active"))
+                    $(this).parent().find("ul").slideDown(1000, "easeOutBounce");
+            });
+
+
+        });
+        </script>
+        <style>
+            ul {
+                display: block;
+                width: 240px;
+                padding: 0;
+                margin: 0;
+            }
+            ul.menu {
+                padding-top: 5px;
+            }
+            ul.menu > li {
+                display: block;
+                margin-top: -5px;
+            }
+            ul.menu > li label:first-child {
+                border-top: 5px solid #889988;
+
+            }
+            ul.menu > li label {
+                display: block;
+                height: 80px;
+                border-bottom: 5px solid #889988;
+                background: #99dd22;
+                font: bold 20px/80px Sans;
+                text-align: center;
+                color: white;
+                text-shadow: -1px -1px 1px #77bb08;
+            }
+            ul.menu > li label:hover {
+                background: #a0e533;
+                cursor: pointer;
+                color: grey;
+                text-shadow: -1px -1px 1px #666666;
+            }
+            ul.menu > li > ul {
+                padding-bottom: 5px;
+                display: block;
+            }
+            ul.menu > li > ul > li {
+                border: 5px solid #554444;
+                height: 40px;
+                background: #443333;
+                font: bold 16px/40px Sans;
+                text-align: center;
+                color: white;
+            }
+            ul.menu > li > ul > li:hover {
+                cursor: pointer;
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Menu -->
+        <ul class="menu">
+            <li><label>Spel</label>
+            	<ul>
+            		<li>Spel 1</li>
+            		<li>Spel 2</li>
+            		<li>Spel 3</li>
+            	</ul>
+            </li>
+        	<li><label>Ingen undermeny</label></li>
+        	<li><label>Extern</label>
+            	<ul>
+            		<li>Link 1</li>
+            		<li>Link 2</li>
+            		<li>Link 3</li>
+            	</ul>
+            </li>
+        </ul>
+        <!-- End of Menu -->
+
+    </body>
+</html>

@@ -1,0 +1,30 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+nav {
+    display: block;
+    width: 450px;
+    padding: 0;
+    margin: 5px auto;
+    background: lightgrey;
+}
+nav ul {
+    padding: 0;
+}
+nav li {
+    background: hotpink;
+    font: 16px/32px Arial;
+    display: inline-block;
+    width: auto;
+    padding: 0 10px;
+    height: 32px;
+    vertical-align: center;
+    text-align: center;
+    white-space: pre;
+}
+nav li:hover {
+    font-weight: bold;
+    line-height: 32px;
+    vertical-align: top;
+}

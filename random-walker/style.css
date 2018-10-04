@@ -1,0 +1,77 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background: lightgrey;
+}
+body {
+    width: 600px;
+    margin: 0 auto;
+}
+h1 {
+    margin-top: 40px;
+    font-family: courier;
+}
+
+input {
+    width: 500px;
+    margin-right: 14px;
+    height: 40px;
+    outline: 0;
+    border: 0;
+    font: 20px/40px courier new;
+}
+button {
+    background: darkgrey;
+    height: 40px;
+    width: 80px;
+    outline: 0;
+    border: 0;
+    font: 20px/40px courier new;
+    cursor: pointer;
+}
+button:hover {
+    background: grey;
+}
+button:active {
+    background: red;
+}
+
+#area {
+    margin: 0px auto;
+    margin-top: 40px;
+    width: 600px;
+    height: 600px;
+    background: white;
+}
+#area table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+}
+#area table tr {
+    height: 38px;
+}
+#area table td {
+    width: 39px;
+    height: 39px;
+    background: #eeeeee;
+    border: 1px solid #dddddd;
+    font: 28px/39px arial;
+    color: white;
+    text-align: center;
+}
+#area table td.wall {
+    background: blue;
+}
+#area table td.start {
+    background: green;
+}
+#area table td.walker {
+    background: red !important;
+    color: red !important;
+}
+#area table td.wasHere {
+    background: darkgrey;
+}

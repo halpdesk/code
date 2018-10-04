@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <script src="jquery-2.2.3.js"></script>
+        <script src="site.js"></script>
+        <link rel="stylesheet" href="design.css">
+        <style>
+            #svg {
+                width: 1000px;
+                height: 1000px;
+                margin: 0 auto;
+                background: lightyellow;
+            }
+            .line { fill:none; stroke:black; stroke-width:1; display: block; }
+        </style>
+        <script>
+            function makeSVG(tag, attrs) {
+                var el= document.createElementNS('http://www.w3.org/2000/svg', tag);
+                for (var k in attrs)
+                    el.setAttribute(k, attrs[k]);
+                return el;
+            }
+            function frac(x_start, y_start, x_end, y_end)
+            {
+                var y_mid = y_start + (y_end-y_start)/2;
+                var x_mid = x_start + (x_end-x_start)/2;
+                var lpoints = x_start+','+y_mid+' '+x_end+','+y_mid;
+                var kpoints = x_mid+','+y_start+' '+x_mid+','+y_end;
+
+                var l = makeSVG('polyline', { points: lpoints, stroke: 'red', 'stroke-width': '1', fill: 'none'});
+                var k = makeSVG('polyline', { points: kpoints, stroke: 'black', 'stroke-width': '1', fill: 'none'});
+                var svg = $('#svg');
+                svg.append(l); $(l).hide().fadeIn(2000);
+                svg.append(k); $(k).hide().fadeIn(2000);
+
+                if (x_end-x_start > 15 && y_end-y_start > 15) {
+
+                    var counter = 0;
+                    var interval = setInterval(function() {
+
+                        counter++;
+
+                        if (counter > 10) {
+
+                            // 2nd quad
+                            frac(x_start,y_start,x_mid,y_mid);
+                            // 1st quad
+                            frac(x_mid, y_start, x_end, y_mid);
+                            // 3rd quad
+                            frac(x_start,y_mid,x_mid,y_end);
+                            // 4th quad
+                            //frac(x_mid, y_mid, x_end, y_end);
+
+                            clearInterval(interval);
+                        }
+
+                    }, 50);
+                }
+            }
+
+            $(document).ready(function() {
+                frac(0, 0, 1000, 1000);
+            });
+        </script>
+    </head>
+    <body>
+
+        <svg id='svg' xmlns="http://www.w3.org/2000/svg"/>
+
+    </body>
+</html>

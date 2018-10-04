@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+
+            html,body {
+                margin: 0; padding: 0;
+                background: #303030;
+            }
+            .canvases-wrapper {
+                position: relative;
+                background: khaki;
+            }
+            .canvas {
+                /* position: relative; */
+                display: inline-block;
+                width: 200px;
+                height: 200px;
+                margin: 20px;
+                background: white;
+                overflow: hidden;
+                border: 1px solid green;
+            }
+            .dimension {
+                display: block;
+                width: 100px;
+                height: 30px;
+                position: absolute;
+                bottom: -10px;
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="canvases-wrapper">
+            <div class="canvas">
+                <div class="dimension">300 x 200</div>
+            </div>
+            <div class="canvas">
+                <div class="dimension">300 x 200</div>
+            </div>
+        </div>
+    </body>
+</html>

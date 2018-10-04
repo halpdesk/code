@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <script>
+
+        </script>
+        <style>
+            div {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                background: grey;
+            }
+            p {
+                position: relative;
+                top: 30px;
+                left: 20px;
+                color: darkblue;
+                font: bold 30px/36px Arial;
+                animation: fontbulger 5s infinite;
+            }
+            span {
+                position: absolute;
+                display: block;
+                width: 20px;
+                height: 20px;
+                background: maroon;
+                bottom: 30px;
+                left: 10px;
+                animation: sizebox 5s infinite;
+            }
+            em {
+                color: yellow;
+                position: absolute;
+                bottom: 40px;
+                right: 10px;
+                font: bold 50px/50px Arial;
+                animation: fontunderline 5s infinite;
+            }
+
+            @keyframes sizebox {
+                100% {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            @keyframes fontbulger {
+                0% {
+                    color: red;
+                    font-size: 30px;
+                }
+                18% {
+                    color: red;
+                }
+                19% {
+                    color: black;
+                }
+                20% {
+                    color: red;
+                    font-size: 30px;
+                }
+                100% {
+                    color: blue;
+                    font-size: 40px;
+                }
+            }
+            @keyframes fontunderline {
+                5% { text-decoration: none; }
+                20% { text-decoration: underline; } 25% { text-decoration: none; }
+                40% { text-decoration: underline; } 45% { text-decoration: none; }
+                60% { text-decoration: underline; } 65% { text-decoration: none; }
+                80% { text-decoration: underline; } 85% { text-decoration: none; }
+                100% { text-decoration: underline; } 
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>Ad Title</p>
+            <span></span>
+            <em>L</em>
+        </div>
+    </body>
+</html>

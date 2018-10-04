@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <style>
+
+            html,body {
+                margin: 0; padding: 0;
+                background: #303030;
+            }
+            .w10 { left: 100px; }
+            .w20 { left: 310px; }
+            .w30 { left: 520px; }
+            .w40 { left: 730px; }
+            .canvas .img1 {
+                left: -20px;
+                top: -5px;
+                width: 80px;
+                background: rgba(200,200,0,1);
+                z-index: 5;
+            }
+            .canvas span {
+                left: 30px;
+                top: 10px;
+                width: 80px;
+                background: rgba(100,100,200,1);
+                display: block;
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                z-index: 2;
+                display none;
+                /* opacity: 0.5; */
+            }
+            .canvas .img2 {
+                left: -20px;
+                top: -9px;
+                width: 60px;
+                background: rgba(0,0,100,1);
+            }
+            .canvas .img3 {
+                right: -20px;
+                top: -8px;
+                width: 60px;
+                background: rgba(0,100,100,1);
+            }
+            .canvas .img4 {
+                left: -20px;
+                top: 60px;
+                width: 70px;
+                background: rgba(100,0,100,1);
+            }
+            .canvas * {
+                /* display: none; */
+                position: absolute;
+                /* z-index: 1; */
+                border: 1px dashed grey;
+                /* opacity: 0.99; */
+            }
+            .canvas {
+                position: absolute;
+                display: inline-block;
+                width: 200px;
+                height: 200px;
+                margin: 20px;
+                background: white;
+                /* opacity: 0.97; */
+            }
+            .canvas.active {
+                position: absolute;
+                z-index: 1;
+                /* opacity: 0.5; */
+                /* background: red; */
+            }
+            .canvas.active:after {
+                position: absolute;
+                content: " ";
+                /* outline: 5000px solid red; */
+                opacity: 0.5;
+                width: 200px;
+                height: 200px;
+                left: 0;
+                top: 0;
+                z-index: 6;
+            }
+            .canvas.alsoActive {
+                /* z-index: 1; */
+                /* opacity: 0.99; */
+            }
+            .canvas.alsoActive:after {
+                position: absolute;
+                content: " ";
+                /* outline: 2000px solid green; */
+                opacity: 0.8;
+                width: 200px;
+                height: 200px;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                opacity: 0.5;
+            }
+            .adCard {
+                position: absolute;
+                top: 400px;
+                left: 400px;
+                width: 120px;
+                height: 160px;
+                background: #383838;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div class="canvas w10 active"><img class="img1" src="favicon.png"><span></span></div>
+        <div class="canvas w20 alsoActive"><img class="img2" src="favicon.png"></div>
+        <div class="canvas w30 "><img class="img3" src="favicon.png"></div>
+        <div class="canvas w40 "><img class="img4" src="favicon.png"></div>
+
+        <div class="adCard">
+            <div class="preview"></div>
+            <div class="stats">
+                <dl>
+                    <dt>Networks</dt><dd>10</dd>
+                    <dt>Ads</dt><dd>5</dd>
+                </dl>
+            </div>
+        </div>
+    </body>
+</html>
